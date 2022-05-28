@@ -1,0 +1,19 @@
+{
+    "WHAT IS YOUR AGE?": 20,
+    "WHAT IS YOUR HEIGHT (IN CM)?": 20,
+    "WHICH CITY DO YOU LIVE IN?": "Blr",
+    "Have you been on a diet before?":{
+        "options": ["KETOGENIC DIET", "INTERMEDIATE FASTING"],
+        "CustomText": "casdas"
+    },
+
+    "WHAT IS YOUR STRESS LEVEL? (SCALE 1 - 10)": 20
+
+}
+
+
+
+
+
+
+

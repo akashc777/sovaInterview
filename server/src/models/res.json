@@ -1,0 +1,286 @@
+
+
+{
+
+    "QuePages":[
+        {
+            "title": "First, the basics",
+            "image": "https://static.sova.health/web/images/onboarding/onboarding-basics.svg",
+            "listofQue": {
+                "WHAT IS YOUR AGE?":{
+                    "required": "None",
+                    "Type": "Number",
+                    "range": [18,90],
+                    "PlaceHolderText": "between 18 and 90 years",
+                    "IsMandate": true 
+                },
+                "WHAT IS YOUR HEIGHT (IN CM)?":{
+                    "required": "None",
+                    "Type": "Number",
+                    "range": [120,210],
+                    "PlaceHolderText": "between 120 and 210 cms"
+                },
+                "WHAT IS YOUR WEIGHT (IN KG)?":{
+                    "required": "None",
+                    "Type": "Number",
+                    "range": [30,240],
+                    "PlaceHolderText": "between 30 and 240 kgs"
+                },
+
+                "WHICH CITY DO YOU LIVE IN?":{
+                    "required": "None",
+                    "Type": "Dropdown",
+                    "Options": ["Delhi", "Blr","Chennai"],
+                    "defalut": 2
+                    
+                },
+
+                "WHAT WAS YOUR BIOLOGICAL GENDER AT BIRTH?":{
+                    "required": "None",
+                    "Type": "Dropdown",
+                    "Options": ["Male", "Female","Choose"],
+                    "defalut": 2
+                },
+                "Are you pregnant":{
+                    "required":{
+                        "WHAT WAS YOUR BIOLOGICAL GENDER AT BIRTH?":"Female"
+                    },
+                    "Type": "Dropdown",
+                    "Options": ["Yes", "No","Choose"],
+                    "defalut": 2
+
+                },
+    
+                "ARE YOU TAKING ANY CONTRACEPTIVES?":{
+                    "required":{
+                        "Are you pregnant":"No",
+                        "Type": "Dropdown",
+                        "Options": ["Yes", "No","Choose"],
+                        "defalut": 2
+
+                    }
+                }
+            }
+        },{
+            "title": "Have you been on a diet before?",
+            "image": "https://static.sova.health/web/images/onboarding/onboarding-previous-diets.svg",
+            "listofQue":{
+                "Have you been on a diet before?":{
+                    "Type": "Multi-select",
+                    "MultiSelectOptions":[
+                        {
+                            "Option": "NO",
+                            "Action":{
+                                "DeselectOther": true
+                            },
+                            "Des":"Choose this if you have never followed a diet plan."
+                        },
+
+                        {
+                            "Option": "KETOGENIC DIET",
+                            "Des":"Keto diet is a high-fat, adequate-protein, low-carbohydrate diet."
+                        },
+
+                        {
+                            "Option": "INTERMEDIATE FASTING",
+                            "Des":"Meal schedules that cycle between voluntary fasting and non-fasting over a given period."
+                        },
+
+                        {
+                            "Option": "ANY RESTRICTIVE DIET",
+                            "Des":"Choose this if you have taken any other restrictive diet plan."
+                        },
+                        {
+                            "Option": "CONSULTED A NUTRITION PROFESSIONAL",
+                            "Des":"Choose this if you have taken help from professional nutritionist or doctor for your diet."
+                        },
+            
+                        {
+                            "Other": "Other",
+                            "Action":{
+                                "ShowTextDrawer": true,
+                                "DrawerDes": "sometext"
+                            },
+                            "Des":"Choose this if you have taken any other form of diet plans."
+                        }
+                        
+                    ]
+                }
+
+            }
+        },
+        {
+            "title": "Work-life balance",
+            "image": "https://static.sova.health/web/images/onboarding/onboarding-work-life-balance.svg",
+            "listofQue":{
+                "DO YOU WORK SITTING DOWN?":{
+                    "Type": "Dropdown",
+                    "Options": ["Yes", "No","Choose"],
+                    "defalut": 2
+                },
+
+                "WHEN DOES YOUR WORK START?":{
+                    "Type": "Time",
+                    "range": ["0600","0530"],
+                    "Interval": "30", 
+                    "Dfault": "Choose"
+                },
+                "WHEN DOES YOUR WORK END?":{
+                    "Type": "Time",
+                    "range": ["1600", "1530"],
+                    "Interval": "30", 
+                    "Dfault": "Choose"
+                },
+                "WHAT IS YOUR STRESS LEVEL? (SCALE 1 - 10)":{
+                    "Type":"scale",
+                    "min":{
+                        "value": 1,
+                        "text": "chill"
+                    },
+                    "max":{
+                        "value": 10,
+                        "text": "neurotic"
+                    },
+                    "interval": 1,
+                    "Default": 2,
+                    "Desc": "{}"
+                },
+                "WHEN DO YOU USUALLY GO TO BED?":{
+                    "Type": "Time",
+                    "range": ["1900", "1830"],
+                    "Interval": "30", 
+                    "Dfault": "Choose"
+                },
+                "HOW MUCH YOU SLEEP ON AVERAGE?":{
+                    "Type":"scale",
+                    "min":{
+                        "value": 3,
+                        "text": "{} hours"
+                    },
+                    "max":{
+                        "value": 12,
+                        "text": "{} hours"
+                    },
+                    "interval": 1,
+                    "Desc": "{} hours"
+                },
+                "WHAT IS YOUR SLEEP QUALITY (SCALE 1 - 5)?":{
+                    "Type":"scale",
+                    "min":{
+                        "value": 1,
+                        "text": "uncomfortable"
+                    },
+                    "max":{
+                        "value": 5,
+                        "text": "comfortable"
+                    },
+                    "interval": 1,
+                    "Desc": "{}"
+                }
+
+
+
+            }
+        },{
+
+            "title": "Do you smoke?",
+            "image": "https://static.sova.health/web/images/onboarding/onboarding-work-life-balance.svg",
+            "listofQue":{
+                "Do you smoke?":{
+                    "required": "None",
+                    "Type": "Dropdown",
+                    "Options": ["Yes", "No","Choose", "Used to smoke earlier, not anymore"],
+                    "defalut": 2
+                },
+
+                "HOW MANY CIGARETTES DO YOU SMOKE IN A DAY?":{
+                    "required": {
+                        "Do you smoke?": "Yes"
+                    },
+                    "Type":"scale",
+                    "min":{
+                        "value": 1,
+                        "text": "{} or less"
+                    },
+                    "max":{
+                        "value": 20,
+                        "text": "{} or more"
+                    },
+                    "Desc": "{}",
+                    "interval": 1
+                },
+
+                "WHEN DID YOU QUIT SMOKING?":{
+                    "required": {
+                        "Do you smoke?": "Used to smoke earlier, not anymore"
+                    },
+                    "Type": "Dropdown",
+                    "Options": ["Choose", "More than a year","Less than a year", "Less than a month", "Today :D"],
+                    "defalut": 0
+                }
+                
+            }
+
+        },{
+            "title": "Let’s see how active are you",
+            "image": "https://static.sova.health/web/images/onboarding/onboarding-activity.svg",
+            "listofQue":{
+                "HOW MANY TIMES DO YOU WORKOUT IN A WEEK?":{
+                
+                    "Type":"scale",
+                    "min":{
+                        "value": 1,
+                        "text": "never"
+                    },
+                    "max":{
+                        "value": 5,
+                        "text": "{} or more"
+                    },
+                    "Desc": "{} times a week",
+                    "interval": 1
+                },
+
+                "HOW LONG IS YOUR WORKOUT?":{
+                    "Type": "Dropdown",
+                    "Options": ["Choose", "5 - 15 minutes","15 - 30 minutes", "30 - 60 minutes", "60 - 90 minutess", "More than 90 minutes"],
+                    "defalut": 0
+                },
+
+                "WHEN DO YOU USUALLY WORKOUT?":{
+                    "Type": "Dropdown",
+                    "Options": ["Choose", "Early morning","During the day", "Evening", "Late evening (after 9.00 PM)"],
+                    "defalut": 0
+                },
+
+                "Type": "Multi-select",
+                    "MultiSelectOptions":[
+                        {
+                            "Option": "I RUN"
+                        },
+
+                        {
+                            "Option": "I SWIM"
+                        },
+
+                        {
+                            "Option": "I GO TO THE GYM"                        },
+
+                        {
+                            "Option": "I PLAY SPORTS"
+                        },
+            
+                        {
+                            "Other": "NO SPECIFIC WORKOUT",
+                            "Action":{
+                                "ShowTextDrawer": true
+                            }
+                        }
+                        
+                    ]
+
+
+                }
+
+        }
+    ]
+}
