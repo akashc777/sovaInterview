@@ -29,20 +29,21 @@ function checkQuestion(reqQNAList){
     for(const qreq in reqQNAList){
         if(qaDict[qreq] != undefined && checkFunctionWithType[qaDict[qreq].type](reqQNAList[qre],qaDict[qre]) == false) return false;
 
-        return true;
+        
     }
+    return true;
 }
 
 
 const checkFunctionWithType = {
     "scale": checkScale,
     "Dropdown": checkDropdown,
-    "Number": checkDropdown,
+    "Number": checkNumber,
     "Multi-select": checkMultiOption
 }
 
 
-function checkDropdown(reqVal, resTempObj){
+function checkNumber(reqVal, resTempObj){
     if(reqVal > resTempObj.range[1] || reqVal < resTempObj.range[0]) return false;
     return true;
 }
@@ -53,7 +54,6 @@ function checkDropdown(reqVal, resTempObj){
 
 function checkMultiOption(reqVal, resTempObj){
 
-      
     return reqVal.every((currVal) => {
         resTempObj.MultiSelectOptions.filter(function (o) {
         return o.Option === currVal;
